@@ -111,18 +111,21 @@ protocol SnippetsPurchasesDelegate: AnyObject {
 }
 
 extension AppDelegate: PurchasesDelegate {
-//    func purchases(_ purchases: Purchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: PurchaserInfo) {
-//
-//        self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
-//
-//    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-//        
-//        didpurchase = true
-// 
-//
-//    }
+    func purchases(_ purchases: Purchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: PurchaserInfo) {
 
+        self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
 
+    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+        
+        didpurchase = true
+ 
+
+    }
+
+    func purchases(_ purchases: Purchases, receivedUpdatedPurchaserInfo purchaserInfo: PurchaserInfo) {
+        print(purchaserInfo)
+
+    }
 
     func purchases(_ purchases: Purchases, failedToUpdatePurchaserInfoWithError error: Error) {
         print(error)
@@ -134,6 +137,12 @@ extension AppDelegate: PurchasesDelegate {
 
     }
 
+    func purchases(_ purchases: Purchases, restoredTransactionsWith purchaserInfo: PurchaserInfo) {
+        
+        ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+        
+        didpurchase = true
+    }
 
     func purchases(_ purchases: Purchases, failedToRestoreTransactionsWithError error: Error) {
         print(error)

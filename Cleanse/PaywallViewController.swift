@@ -33,40 +33,40 @@ class PaywallViewController: UIViewController {
         
         logTapSubscribeEvent(referrer : refer)
         
-//        purchases.entitlements { (entitlements, error) in
-//            guard let pro = entitlements?["subscriptions"] else { return }
-//            guard let monthly = pro.offerings["Yearly"] else { return }
-//            guard let product = monthly.activeProduct else { return }
-//            
-//            self.purchases.makePurchase(product, { (transaction, purchaserInfo, error, cancelled) in
-//                if let purchaserInfo = purchaserInfo {
-//                    
-//                    if purchaserInfo.activeEntitlements.contains("my_entitlement_identifier") {
-//                        // Unlock that great "pro" content
-//                        
-//                        self.logPurchaseSuccessEvent(referrer : refer)
-//                    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-//                        
-//                        didpurchase = true
-//                        
-//                        self.dismiss(animated: true, completion: nil)
-//                    } else {
-//                        
-//                        
-//                        self.logPurchaseSuccessEvent(referrer : refer)
-//                        
-//                        ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-//                        
-//                        didpurchase = true
-//                        self.dismiss(animated: true, completion: nil)
-//                        
-//                        
-//                    }
-//                    
-//                }
-//            })
-//            
-//        }
+        purchases.entitlements { (entitlements, error) in
+            guard let pro = entitlements?["subscriptions"] else { return }
+            guard let monthly = pro.offerings["Yearly"] else { return }
+            guard let product = monthly.activeProduct else { return }
+            
+            self.purchases.makePurchase(product, { (transaction, purchaserInfo, error) in
+                if let purchaserInfo = purchaserInfo {
+                    
+                    if purchaserInfo.activeEntitlements.contains("my_entitlement_identifier") {
+                        // Unlock that great "pro" content
+                        
+                        self.logPurchaseSuccessEvent(referrer : refer)
+                    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+                        
+                        didpurchase = true
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        
+                        
+                        self.logPurchaseSuccessEvent(referrer : refer)
+                        
+                        ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+                        
+                        didpurchase = true
+                        self.dismiss(animated: true, completion: nil)
+                        
+                        
+                    }
+                    
+                }
+            })
+            
+        }
     }
     
     @IBAction func tapTerms(_ sender: Any) {

@@ -103,6 +103,8 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         selectedtitle = book?.name ?? ""
         selectedurl = book?.audioURL ?? ""
         selectedbookid = book?.bookID ?? ""
+        randomString = selectedbookid
+
         selectedgenre = book?.genre ?? ""
         selectedamazonurl = book?.amazonURL ?? ""
         selecteddescription = book?.description ?? ""

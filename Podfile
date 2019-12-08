@@ -9,8 +9,7 @@ pod 'Firebase/Analytics'
 pod 'Kingfisher'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
-pod 'Purchases'
-pod 'Purchases'
+pod 'Purchases', '2.0.0'
 pod 'FBSDKCoreKit'
 
   # Pods for Cleanse

@@ -10,6 +10,8 @@ import UIKit
 
 var selectedheadline = String()
 var dateformat = String()
+var randomString = String()
+
 
 class TextViewController: UIViewController, UITextViewDelegate {
 
@@ -110,6 +112,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
         
         counter = 0
         arrayCount = headlines.count
+
 //        textView.returnKeyType = UIReturnKeyType.done
         
         progressView.layer.cornerRadius = 5.0
@@ -292,18 +295,27 @@ class TextViewController: UIViewController, UITextViewDelegate {
         if textView.text != "" {
         
             if headlines.count == 1 {
+                
+                                        ref?.child("Entries").child(uid).child(selectedbookid).removeValue()
+
                 ref?.child("Entries").child(uid).childByAutoId().updateChildValues(["Author" : selectedauthorname, "Name" : selectedtitle, "Headline1" : headlines[0], "Author Image" : selectedauthorimage, "Image" : selectedbackground, "Text\(counter)" : textView.text!, "Date" : dateformat])
                 
             }
             
             if headlines.count == 2 {
+                
+                ref?.child("Entries").child(uid).child(selectedbookid).removeValue()
+
              ref?.child("Entries").child(uid).childByAutoId().updateChildValues(["Author" : selectedauthorname, "Name" : selectedtitle, "Headline1" : headlines[0], "Headline2" : headlines[1], "Author Image" : selectedauthorimage, "Image" : selectedbackground, "Text\(counter)" : textView.text!, "Date" : dateformat])
                  
              }
              
             
             if headlines.count == 3 {
-             ref?.child("Entries").child(uid).childByAutoId().updateChildValues(["Author" : selectedauthorname, "Name" : selectedtitle, "Headline1" : headlines[0], "Headline2" : headlines[1], "Headline3" : headlines[2], "Author Image" : selectedauthorimage, "Image" : selectedbackground, "Text\(counter)" : textView.text!, "Date" : dateformat])
+                
+                
+            
+        ref?.child("Entries").child(uid).child(randomString).updateChildValues(["Author" : selectedauthorname, "Name" : selectedtitle, "Headline1" : headlines[0], "Headline2" : headlines[1], "Headline3" : headlines[2], "Author Image" : selectedauthorimage, "Image" : selectedbackground, "Text\(counter)" : textView.text!, "Date" : dateformat])
                  
              }
              
@@ -321,6 +333,8 @@ class TextViewController: UIViewController, UITextViewDelegate {
         }
         
     }
+    
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Write here..."

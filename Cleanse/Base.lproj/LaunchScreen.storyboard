@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,21 +19,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-2" translatesAutoresizingMaskIntoConstraints="NO" id="fVo-bL-hcX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="POx-ys-Wmy">
-                                <rect key="frame" x="154" y="415" width="106" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="gKP-uE-b1l"/>
-                                    <constraint firstAttribute="width" constant="106" id="qtt-Is-9UL"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="be kind to yourself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-Kf-TuA">
+                                <rect key="frame" x="117.5" y="433.5" width="179.5" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="POx-ys-Wmy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NBF-kM-qdM"/>
+                            <constraint firstItem="4Bf-Kf-TuA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="30l-93-F0f"/>
                             <constraint firstItem="fVo-bL-hcX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aNQ-VZ-hrx"/>
+                            <constraint firstItem="4Bf-Kf-TuA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="erH-dL-uk7"/>
                             <constraint firstItem="fVo-bL-hcX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oAl-0K-nJc"/>
                             <constraint firstItem="fVo-bL-hcX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="pTp-YM-hR4"/>
-                            <constraint firstItem="POx-ys-Wmy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uoy-NV-GBc"/>
                             <constraint firstAttribute="bottom" secondItem="fVo-bL-hcX" secondAttribute="bottom" id="xyY-E9-2ut"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -46,6 +45,5 @@
     </scenes>
     <resources>
         <image name="Background-2" width="512" height="512"/>
-        <image name="Group" width="408" height="330"/>
     </resources>
 </document>

@@ -15,14 +15,14 @@ import AVFoundation
 
 var time = String()
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
    var counter = 0
            //
            var books: [Book] = [] {
                didSet {
 
-                   self.titleCollectionView.reloadData()
+                   self.titleTableView.reloadData()
 
                }
            }
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
  
 
-           @IBOutlet weak var titleCollectionView: UICollectionView!
+           @IBOutlet weak var titleTableView: UITableView!
 
            var swipecounter = Int()
 
@@ -64,20 +64,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                selectedgenre = "Chill"
 
 
-               titleCollectionView.reloadData()
+               titleTableView.reloadData()
             
-            var screenSize = titleCollectionView.bounds
-                   var screenWidth = screenSize.width
-                   var screenHeight = screenSize.height
-
-                   let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-                   layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 10, right: 0)
-                   layout.itemSize = CGSize(width: screenWidth-30, height: 105)
-                   layout.minimumInteritemSpacing = 0
-                   layout.minimumLineSpacing = 0
-
-                   titleCollectionView!.collectionViewLayout = layout
-            
+    
             
                   let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH"
@@ -110,7 +99,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
          func queryforids(completed: @escaping (() -> Void) ) {
 
-               titleCollectionView.alpha = 0
+               titleTableView.alpha = 0
 
                var functioncounter = 0
 
@@ -192,19 +181,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                // Dispose of any resources that can be recreated.
            }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         refer = "On Tap Daily"
         
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
         
-        if collectionView.tag == 1 {
-            
-            
-            
-        } else {
+    
             
             if didpurchase {
             
@@ -219,6 +204,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             selectedtitle = book?.name ?? ""
             selectedurl = book?.audioURL ?? ""
             selectedbookid = book?.bookID ?? ""
+            randomString = NSUUID().uuidString
+
             selectedgenre = book?.genre ?? ""
             selectedamazonurl = book?.amazonURL ?? ""
             selecteddescription = book?.description ?? ""
@@ -281,7 +268,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             
             
-        }
     }
 
     @IBAction func tapDiscount(_ sender: Any) {
@@ -334,24 +320,26 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidAppear(_ animated: Bool) {
         
-        
-            
+        textone = ""
+            let dateFormatter = DateFormatter()
+                 dateFormatter.dateFormat = "HH"
+                 time = dateFormatter.string(from: NSDate() as Date)
           
       }
 
-           func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                
+                return 1
 
-         
-                   return 1
-           
-           }
+            }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          
-          let book = self.book(atIndexPath: indexPath)
-          titleCollectionView.alpha = 1
-          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! TitleCollectionViewCell
-          //
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+
+        
+        let book = self.book(atIndexPath: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Home", for: indexPath) as! HomeTableViewCell
           //            if book?.bookID == "Title" {
           //
           //                return cell
@@ -360,9 +348,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
           
           
           
-          cell.backlabel.layer.cornerRadius = 15.0
-          cell.backlabel.clipsToBounds = true
-          
+
+        titleTableView.alpha = 1
    
           let date = Date()
           let dateFormatter = DateFormatter()
@@ -381,31 +368,24 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
           
           
      
-          
-          if name == "Good Morning"{
+               if let imageURLString = book?.imageURL, let imageUrl = URL(string: imageURLString) {
               
-              cell.titleImage.image = UIImage(named: "Sun")
-              
-      
-              
-          } else {
-              
-              cell.titleImage.image = UIImage(named: "Moon")
-              
-          }
+              cell.titleImage.kf.setImage(with: imageUrl)
+                
+        }
           
           
           var randomint = Int.random(in: 100..<1000)
           
           
-          cell.titleImage.layer.cornerRadius = cell.titleImage.frame.size.width/2
-          cell.titleImage.clipsToBounds = true
-          cell.titleImage.alpha = 1
+//          cell.titleImage.layer.cornerRadius = cell.titleImage.frame.size.width/2
+//          cell.titleImage.clipsToBounds = true
+//          cell.titleImage.alpha = 1
           
               
           
-          cell.layer.cornerRadius = 5.0
-          cell.layer.masksToBounds = true
+          cell.layer.cornerRadius = 15.0
+          cell.clipsToBounds = true
           
           cell.titlelabel.alpha = 1
           cell.titlelabel.alpha = 1

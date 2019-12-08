@@ -90,7 +90,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - Purchases (3.0.0)
+  - Purchases (2.0.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -98,7 +98,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher
-  - Purchases
+  - Purchases (= 2.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -141,8 +141,8 @@ SPEC CHECKSUMS:
   Kingfisher: 0bf6eae7c2193f15719915fecb7c2c1c03855f3d
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  Purchases: e22cbc4cd3bccdb482b5cc9a9a2a2008887d0ba4
+  Purchases: 17496bdab0d0fb678f5f647c4c7039bca3b8263c
 
-PODFILE CHECKSUM: 4aa63240865e626d0ea305e2a12a542fe502d285
+PODFILE CHECKSUM: e2c8d3a8f4a6fe63c1b0913f8a9f738043c72c75
 
 COCOAPODS: 1.6.1

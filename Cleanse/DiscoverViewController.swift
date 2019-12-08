@@ -243,18 +243,53 @@ class DiscoverViewController: UIViewController, UICollectionViewDelegate, UIColl
 
             queryforinfo()
             
-            genres.removeAll()
-            genres.append("Depression")
-            genres.append("Sleep")
-            genres.append("Morning")
-            genres.append("Anxiety")
-            genres.append("Stress")
-            genres.append("Focus")
-            genres.append("Relationships")
-            genres.append("Goals")
-            genres.append("All")
+        genres.removeAll()
+//        genres.append("Work")
+//        genres.append("Parents")
+//        genres.append("Girls")
+//        genres.append("Friends")
+//        genres.append("Weight")
+//        genres.append("Mental Health")
+        
+        // most common traumatic events
+//        genres.append("Death")
+//        genres.append("Divorce")
+//        genres.append("Work")
+//        genres.append("Money")
+//        genres.append("Moving")
+//        genres.append("Sick")
+//        genres.append("Injured")
 
-            selectedgenre = "Depression"
+        
+                // reflectly
+        
+//            genres.append("Work")
+//            genres.append("Family")
+//            genres.append("Relationship")
+//            genres.append("School")
+//            genres.append("Food")
+//            genres.append("Travel")
+//            genres.append("Friends")
+//            genres.append("Religion")
+//            genres.append("Education")
+
+                // common MH conditions and stressors, job interviews
+                
+                    genres.append("Sad")
+                    genres.append("Anxious")
+                    genres.append("Panic")
+                    genres.append("Nervous")
+                    genres.append("Grieving")
+                    genres.append("Addicted")
+                    genres.append("Overeating")
+                    genres.append("Angry")
+
+
+
+            
+
+
+            selectedgenre = "Sad"
         
             let date = Date()
               let dateFormatter = DateFormatter()
@@ -681,7 +716,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDelegate, UIColl
                 cell.titlelabel.text = genres[indexPath.row]
                 //            cell.titlelabel.sizeToFit()
 
-                cell.selectedimage.layer.cornerRadius = 5.0
+                cell.selectedimage.layer.cornerRadius = 10.0
                 cell.selectedimage.layer.masksToBounds = true
                 
              
