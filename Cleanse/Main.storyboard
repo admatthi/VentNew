@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="k05-0k-1A6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000023"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vent" translatesAutoresizingMaskIntoConstraints="NO" id="ruf-VE-6d7">
                                 <rect key="frame" x="87" y="81" width="240" height="25"/>
@@ -162,13 +162,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="pUC-j3-a73">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="217"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="217.00000000000023"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="hf6-zu-5JX">
-                                <rect key="frame" x="0.0" y="206" width="414" height="690"/>
+                                <rect key="frame" x="0.0" y="206" width="414" height="690.00000000000023"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="Z8V-t2-hOF">
-                                <rect key="frame" x="20" y="335" width="52" height="52"/>
+                                <rect key="frame" x="20" y="335" width="52" height="52.000000000000227"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="6vJ-Dx-JJo"/>
                                     <constraint firstAttribute="height" constant="52" id="XJU-as-63H"/>
@@ -283,7 +283,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="roP-dD-Qyv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="894"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="894.00000000000023"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xrr-Wy-a2K">
                                 <rect key="frame" x="0.0" y="105" width="414" height="708"/>
@@ -306,7 +306,7 @@
                                                     <rect key="frame" x="0.0" y="8" width="171" height="205"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle Copy 5" translatesAutoresizingMaskIntoConstraints="NO" id="dtO-Rq-EVh">
-                                                    <rect key="frame" x="-2" y="-19" width="176" height="232"/>
+                                                    <rect key="frame" x="-2" y="97" width="176" height="116"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to be hopeful in your life" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tl1-MZ-pzW">
                                                     <rect key="frame" x="5" y="133" width="161" height="74"/>
@@ -446,7 +446,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="0CK-Q6-Kep" kind="relationship" relationship="viewControllers" id="Mcw-6O-yxX"/>
-                        <segue destination="0HA-tE-4gf" kind="relationship" relationship="viewControllers" id="xIY-7b-ff5"/>
+                        <segue destination="0HA-tE-4gf" kind="relationship" relationship="viewControllers" id="i7k-FX-LB3"/>
                         <segue destination="kuX-T0-Dbr" kind="relationship" relationship="viewControllers" id="pGC-i7-Gwc"/>
                     </connections>
                 </tabBarController>
@@ -523,7 +523,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="FSf-Pa-5UU">
-                                <rect key="frame" x="10" y="61" width="52" height="52"/>
+                                <rect key="frame" x="10" y="61" width="52" height="52.000000000000227"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="Lwb-pI-6uC"/>
                                     <constraint firstAttribute="width" constant="52" id="gaK-M2-4Ix"/>
@@ -761,7 +761,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="pmv-uz-cdX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896.00000000000023"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nOc-Ho-mZY">
                                 <rect key="frame" x="0.0" y="63" width="414" height="750"/>
@@ -784,7 +784,7 @@
                                                     <rect key="frame" x="0.0" y="8" width="171" height="205"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle Copy 5" translatesAutoresizingMaskIntoConstraints="NO" id="Cdc-ed-bwL">
-                                                    <rect key="frame" x="-5" y="-19" width="181" height="232"/>
+                                                    <rect key="frame" x="-5" y="97" width="181" height="116"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LET'S GO LET'S FUCKING GO" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-Q8-Gr4">
                                                     <rect key="frame" x="5" y="143.5" width="161" height="49.5"/>
@@ -1001,7 +1001,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-wA-aeG">
-                                <rect key="frame" x="-1" y="0.0" width="415" height="896"/>
+                                <rect key="frame" x="-1" y="0.0" width="415" height="896.00000000000023"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vegan-2" translatesAutoresizingMaskIntoConstraints="NO" id="Edx-UB-YeI">
                                 <rect key="frame" x="5" y="166.5" width="198" height="35"/>
@@ -1363,8 +1363,8 @@
         <image name="image1" width="668" height="1002"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hwI-OX-bbJ"/>
+        <segue reference="JqX-1y-5PP"/>
         <segue reference="yKM-yS-eie"/>
-        <segue reference="yUv-dn-toi"/>
+        <segue reference="Mhc-Zy-cbR"/>
     </inferredMetricsTieBreakers>
 </document>
