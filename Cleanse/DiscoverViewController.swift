@@ -275,21 +275,25 @@ class DiscoverViewController: UIViewController, UICollectionViewDelegate, UIColl
 
                 // common MH conditions and stressors, job interviews
                 
-                    genres.append("Sad")
-                    genres.append("Anxious")
+                    genres.append("Depressed")
+                    genres.append("Insecure")
                     genres.append("Panic")
+                    genres.append("Anxious")
                     genres.append("Nervous")
                     genres.append("Grieving")
                     genres.append("Addicted")
-                    genres.append("Overeating")
+                    genres.append("Illness")
+                    genres.append("Eating")
                     genres.append("Angry")
+                    genres.append("PTSD")
+                    genres.append("Bipolar")
 
 
 
             
 
 
-            selectedgenre = "Sad"
+            selectedgenre = "Depressed"
         
             let date = Date()
               let dateFormatter = DateFormatter()

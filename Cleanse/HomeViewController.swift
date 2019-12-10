@@ -188,14 +188,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        
-    
-            
-            if didpurchase {
             
             let book = self.book(atIndexPath: indexPath)
-            
-            
             
             headlines.removeAll()
             
@@ -259,13 +253,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             
             self.performSegue(withIdentifier: "DailyToRead", sender: self)
-            
-            
-            } else {
-                
-                self.performSegue(withIdentifier: "HomeToSale2", sender: self)
-            }
-            
             
             
     }

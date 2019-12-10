@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           
           if launchedBefore {
               
-              tabBarBuyer.selectedIndex = 1
+              tabBarBuyer.selectedIndex = 0
               
           } else {
               
