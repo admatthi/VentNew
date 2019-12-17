@@ -170,6 +170,20 @@ class TextViewController: UIViewController, UITextViewDelegate {
 
         }
         
+        newText = textView.text
+        
+        if newText.count < 240 {
+                 
+                 tapsave.alpha = 0.5
+                 tapsave.isUserInteractionEnabled = false
+            characterslabel.alpha = 1
+             } else {
+                 
+                 tapsave.alpha = 1
+                 tapsave.isUserInteractionEnabled = true
+                characterslabel.alpha = 0
+             }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -257,6 +271,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    @IBOutlet weak var characterslabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -265,14 +280,26 @@ class TextViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    var newText = String()
+    
     func textViewDidChange(_ textView: UITextView) {
         
-        if textView.text != "" {
-            
-            tapsave.alpha = 1
-        } else {
+        newText = textView.text
+        
+        let myint = 240-newText.count
+        
+        characterslabel.text = "\(myint)"
+        
+        if newText.count < 240 {
             
             tapsave.alpha = 0.5
+            tapsave.isUserInteractionEnabled = false
+            characterslabel.alpha = 1
+        } else {
+            
+            tapsave.alpha = 1
+            tapsave.isUserInteractionEnabled = true
+            characterslabel.alpha = 0
         }
     }
     
