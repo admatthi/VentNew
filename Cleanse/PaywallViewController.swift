@@ -97,21 +97,49 @@ class PaywallViewController: UIViewController {
         
         logPaywallShownEvent(referrer : refer)
         
-        if slimeybool {
-            
-            termstext.alpha = 0
-            leadingtext.alpha = 0
-            disclaimertext.alpha = 0
-            tapcontinue.setTitle("Try Free", for: .normal)
-            
-        } else {
-            
-            termstext.alpha = 1
-            leadingtext.alpha = 1
-            disclaimertext.alpha = 1
-            tapcontinue.setTitle("Continue", for: .normal)
-        }
+        queryforpaywall()
+        
+ 
         // Do any additional setup after loading the view.
+    }
+    
+    func queryforpaywall() {
+                
+        ref?.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+     
+            
+            if let slimey = value?["Slimey"] as? String {
+
+                slimeybool = true
+                
+                self.termstext.alpha = 0
+                         self.leadingtext.alpha = 0
+                        self.disclaimertext.alpha = 0
+                         self.tapcontinue.setTitle("Try for Free", for: .normal)
+                
+            } else {
+                
+                slimeybool = false
+                self.termstext.alpha = 1
+                  self.leadingtext.alpha = 1
+                  self.disclaimertext.alpha = 1
+                  self.tapcontinue.setTitle("Continue", for: .normal)
+
+            }
+            
+            if let discountcode = value?["DiscountCode"] as? String {
+                
+               actualdiscount = discountcode
+                
+            } else {
+                
+                
+            }
+        })
+        
     }
     
     

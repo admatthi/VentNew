@@ -103,6 +103,10 @@ class TextViewController: UIViewController, UITextViewDelegate {
 //         return true
 //     }
     
+    @IBAction func tapDismiss(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var authorftile: UILabel!
     @IBOutlet weak var titleoftile: UILabel!
     
@@ -172,18 +176,18 @@ class TextViewController: UIViewController, UITextViewDelegate {
         
         newText = textView.text
         
-        if newText.count < 240 {
-                 
-                 tapsave.alpha = 0.5
-                 tapsave.isUserInteractionEnabled = false
-            characterslabel.alpha = 1
-             } else {
-                 
-                 tapsave.alpha = 1
-                 tapsave.isUserInteractionEnabled = true
-                characterslabel.alpha = 0
-             }
-        
+//        if newText.count < 240 {
+//
+//                 tapsave.alpha = 0.5
+//                 tapsave.isUserInteractionEnabled = false
+//            characterslabel.alpha = 1
+//             } else {
+//
+//                 tapsave.alpha = 1
+//                 tapsave.isUserInteractionEnabled = true
+//                characterslabel.alpha = 0
+//             }
+//
         
         // Do any additional setup after loading the view.
     }
@@ -284,23 +288,23 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         
-        newText = textView.text
-        
-        let myint = 240-newText.count
-        
-        characterslabel.text = "\(myint)"
-        
-        if newText.count < 240 {
-            
-            tapsave.alpha = 0.5
-            tapsave.isUserInteractionEnabled = false
-            characterslabel.alpha = 1
-        } else {
-            
-            tapsave.alpha = 1
-            tapsave.isUserInteractionEnabled = true
-            characterslabel.alpha = 0
-        }
+//        newText = textView.text
+//
+//        let myint = 240-newText.count
+//
+//        characterslabel.text = "\(myint)"
+//
+//        if newText.count < 240 {
+//
+//            tapsave.alpha = 0.5
+//            tapsave.isUserInteractionEnabled = false
+//            characterslabel.alpha = 1
+//        } else {
+//
+//            tapsave.alpha = 1
+//            tapsave.isUserInteractionEnabled = true
+//            characterslabel.alpha = 0
+//        }
     }
     
     func setDoneOnKeyboard() {

@@ -41,6 +41,9 @@
 		9DD9B3FE239B81990061D960 /* DataModel in Resources */ = {isa = PBXBuildFile; fileRef = 9DD9B3FD239B81990061D960 /* DataModel */; };
 		9DD9B400239C047A0061D960 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9B3FF239C047A0061D960 /* HomeTableViewCell.swift */; };
 		9DEF34D5236BBEFB003A3A41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEF34D4236BBEFB003A3A41 /* HomeViewController.swift */; };
+		9DF6E6EE23AC8B6300DCB973 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6E6ED23AC8B6300DCB973 /* SleepViewController.swift */; };
+		9DF6E6F023AC8B6E00DCB973 /* DepressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6E6EF23AC8B6E00DCB973 /* DepressionViewController.swift */; };
+		9DF6E6F223AC8B8200DCB973 /* TraumaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6E6F123AC8B8200DCB973 /* TraumaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		9DD9B3FD239B81990061D960 /* DataModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataModel; sourceTree = "<group>"; };
 		9DD9B3FF239C047A0061D960 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		9DEF34D4236BBEFB003A3A41 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9DF6E6ED23AC8B6300DCB973 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
+		9DF6E6EF23AC8B6E00DCB973 /* DepressionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepressionViewController.swift; sourceTree = "<group>"; };
+		9DF6E6F123AC8B8200DCB973 /* TraumaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraumaViewController.swift; sourceTree = "<group>"; };
 		B9E498B84B2ACBF50B5B77A4 /* Pods-CleanseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanseTests.release.xcconfig"; path = "Target Support Files/Pods-CleanseTests/Pods-CleanseTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB4E75DE477705A6F1FDAAF7 /* Pods_CleanseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -179,6 +185,9 @@
 				9D328D0923651B26003768CF /* Main.storyboard */,
 				9DD9B3FF239C047A0061D960 /* HomeTableViewCell.swift */,
 				9D328D112365F5DC003768CF /* DiscoverViewController.swift */,
+				9DF6E6ED23AC8B6300DCB973 /* SleepViewController.swift */,
+				9DF6E6EF23AC8B6E00DCB973 /* DepressionViewController.swift */,
+				9DF6E6F123AC8B8200DCB973 /* TraumaViewController.swift */,
 				9DD64A2C2376073000F159E5 /* FreeToPlayViewController.swift */,
 				9DD64A2E23760A1D00F159E5 /* HomeTabViewController.swift */,
 				9D2D42552373360A003E21C1 /* EntriesViewController.swift */,
@@ -490,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF6E6F223AC8B8200DCB973 /* TraumaViewController.swift in Sources */,
 				9D7360E7236513DC00DC6ACB /* AppDelegate.swift in Sources */,
 				9DD64A2D2376073000F159E5 /* FreeToPlayViewController.swift in Sources */,
 				9D328D142365F5F0003768CF /* LikesViewController.swift in Sources */,
@@ -499,9 +509,11 @@
 				9DD9B400239C047A0061D960 /* HomeTableViewCell.swift in Sources */,
 				9D328D122365F5DC003768CF /* DiscoverViewController.swift in Sources */,
 				9D2D42562373360A003E21C1 /* EntriesViewController.swift in Sources */,
+				9DF6E6F023AC8B6E00DCB973 /* DepressionViewController.swift in Sources */,
 				9DEF34D5236BBEFB003A3A41 /* HomeViewController.swift in Sources */,
 				9D0663B22367B3AA00385DEE /* PaywallConfigurationVariant.swift in Sources */,
 				9D328D1823662923003768CF /* AudioViewController.swift in Sources */,
+				9DF6E6EE23AC8B6300DCB973 /* SleepViewController.swift in Sources */,
 				9D0663B12367B3AA00385DEE /* Audio.swift in Sources */,
 				9D328D1C2366593C003768CF /* TitleCollectionViewCell.swift in Sources */,
 				9D328D16236628E9003768CF /* PaywallViewController.swift in Sources */,
@@ -686,7 +698,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.CleanseRecipes;
 				PRODUCT_NAME = Vent;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -712,7 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.CleanseRecipes;
 				PRODUCT_NAME = Vent;
 				PROVISIONING_PROFILE_SPECIFIER = "";

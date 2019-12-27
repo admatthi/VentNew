@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               
           } else {
               
-              tabBarBuyer.selectedIndex = 0
+              tabBarBuyer.selectedIndex = 1
               
               UserDefaults.standard.set(true, forKey: "launchedBefore")
               
