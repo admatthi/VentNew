@@ -52,7 +52,6 @@ class PaywallViewController: UIViewController {
                         self.dismiss(animated: true, completion: nil)
                     } else {
                         
-                        
                         self.logPurchaseSuccessEvent(referrer : refer)
                         
                         ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
