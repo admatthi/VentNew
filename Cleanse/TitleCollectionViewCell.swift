@@ -11,6 +11,7 @@ import UIKit
 class TitleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backlabel: UIImageView!
     
+    @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var titleback: UIImageView!
     @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var viewslabel: UILabel!

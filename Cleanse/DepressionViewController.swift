@@ -397,88 +397,86 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var titleCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        genres.removeAll()
+        genres.append("Depression")
+        genres.append("Sleep")
+        
+        genres.append("Insecurity")
+        genres.append("Panic")
+        genres.append("Anxiety")
+        genres.append("Nervous")
+        genres.append("Grieving")
+        genres.append("Addiction")
+        genres.append("Anger")
+        
+        ref = Database.database().reference()
+        
+        queryforinfo()
+        
+        selectedgenre = "Depression"
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d"
+        let result = dateFormatter.string(from: date)
+        
+        dateformat = result
+        
 
-         genres.removeAll()
-                            genres.append("Depression")
-                            genres.append("Insecurity")
-                            genres.append("Panic")
-                            genres.append("Anxiety")
-                            genres.append("Nervous")
-                            genres.append("Grieving")
-                            genres.append("Addiction")
-                            genres.append("Anger")
+
+        
+        
+        if selectedgenre == "" || selectedgenre == "None" {
             
-            ref = Database.database().reference()
-
-                          queryforinfo()
-
-                    selectedgenre = "Depression"
-                
-                    let date = Date()
-                      let dateFormatter = DateFormatter()
-                      dateFormatter.dateFormat = "MMM d"
-                      let result = dateFormatter.string(from: date)
-
-                      dateformat = result
-
-                let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-                let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                blurEffectView.frame = backimage.bounds
-                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-               backimage.addSubview(blurEffectView)
-
-
-
-               if selectedgenre == "" || selectedgenre == "None" {
-
-                    selectedgenre = "Money"
-
-                    selectedindex = genres.firstIndex(of: selectedgenre)!
-
-                    genreCollectionView.reloadData()
-
-                } else {
-
-                    print(selectedindex)
-
-                    selectedindex = genres.firstIndex(of: selectedgenre)!
-
-                    genreCollectionView.reloadData()
-
-                }
-
-                titleCollectionView.reloadData()
-
-                //        addstaticbooks()
-
-
-
-                //        dayofmonth = "15"
-
-                musictimer?.invalidate()
-                
-                updater?.invalidate()
-                player?.pause()
-
-                var screenSize = titleCollectionView.bounds
-                var screenWidth = screenSize.width
-                var screenHeight = screenSize.height
-
-                let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-                layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
-            layout.itemSize = CGSize(width: screenWidth/2.3, height: screenWidth/1.7)
-                layout.minimumInteritemSpacing = 0
-                layout.minimumLineSpacing = 0
-
-                titleCollectionView!.collectionViewLayout = layout
-
-              
-            queryforids { () -> Void in
-
-                        }
-              
-            // Do any additional setup after loading the view.
+            selectedgenre = "Money"
+            
+            selectedindex = genres.firstIndex(of: selectedgenre)!
+            
+            genreCollectionView.reloadData()
+            
+        } else {
+            
+            print(selectedindex)
+            
+            selectedindex = genres.firstIndex(of: selectedgenre)!
+            
+            genreCollectionView.reloadData()
+            
         }
+        
+        titleCollectionView.reloadData()
+        
+        //        addstaticbooks()
+        
+        
+        
+        //        dayofmonth = "15"
+        
+        musictimer?.invalidate()
+        
+        updater?.invalidate()
+        player?.pause()
+        
+        var screenSize = titleCollectionView.bounds
+        var screenWidth = screenSize.width
+        var screenHeight = screenSize.height
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/2.3, height: screenWidth/1.7)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
+        titleCollectionView!.collectionViewLayout = layout
+        
+        
+        queryforids { () -> Void in
+            
+        }
+        
+        // Do any additional setup after loading the view.
+    }
         
         func queryforids(completed: @escaping (() -> Void) ) {
 

@@ -11,6 +11,8 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Purchases', '2.0.0'
 pod 'FBSDKCoreKit'
+pod 'IQKeyboardManager'
+
 
   # Pods for Cleanse
 

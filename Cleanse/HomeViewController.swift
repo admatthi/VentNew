@@ -99,7 +99,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
          func queryforids(completed: @escaping (() -> Void) ) {
 
-               titleTableView.alpha = 0
 
                var functioncounter = 0
 
@@ -319,12 +318,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let dateFormatter = DateFormatter()
                  dateFormatter.dateFormat = "HH"
                  time = dateFormatter.string(from: NSDate() as Date)
+        
+        titleTableView.reloadData()
           
       }
 
            func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 
-                return 1
+            return books.count
 
             }
 
@@ -344,7 +345,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
           
           
 
-        titleTableView.alpha = 1
    
           let date = Date()
           let dateFormatter = DateFormatter()
@@ -359,7 +359,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.titlelabel.text = name
 
           
-          
+        cell.backimage.alpha = 0.8
+
           
           
      
@@ -382,8 +383,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
           cell.layer.cornerRadius = 15.0
           cell.clipsToBounds = true
           
-          cell.titlelabel.alpha = 1
-          cell.titlelabel.alpha = 1
+    
           
           
           

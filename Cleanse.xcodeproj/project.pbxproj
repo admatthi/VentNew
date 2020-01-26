@@ -16,6 +16,7 @@
 		9D0663B12367B3AA00385DEE /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0663AB2367B3A900385DEE /* Audio.swift */; };
 		9D0663B22367B3AA00385DEE /* PaywallConfigurationVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0663AD2367B3A900385DEE /* PaywallConfigurationVariant.swift */; };
 		9D2D42562373360A003E21C1 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D42552373360A003E21C1 /* EntriesViewController.swift */; };
+		9D2E8F0523C006EB0012AA3E /* TextHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E8F0423C006EB0012AA3E /* TextHomeViewController.swift */; };
 		9D328D0823651A92003768CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D328D0723651A92003768CF /* GoogleService-Info.plist */; };
 		9D328D0A23651B26003768CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D328D0923651B26003768CF /* Main.storyboard */; };
 		9D328D0E2365EF72003768CF /* BasisGrotesquePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D328D0B2365EF72003768CF /* BasisGrotesquePro-Regular.ttf */; };
@@ -77,6 +78,7 @@
 		9D0663AD2367B3A900385DEE /* PaywallConfigurationVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallConfigurationVariant.swift; sourceTree = "<group>"; };
 		9D0663AE2367B3A900385DEE /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		9D2D42552373360A003E21C1 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
+		9D2E8F0423C006EB0012AA3E /* TextHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHomeViewController.swift; sourceTree = "<group>"; };
 		9D328D0723651A92003768CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D328D0923651B26003768CF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9D328D0B2365EF72003768CF /* BasisGrotesquePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BasisGrotesquePro-Regular.ttf"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				9DF6E6F123AC8B8200DCB973 /* TraumaViewController.swift */,
 				9DD64A2C2376073000F159E5 /* FreeToPlayViewController.swift */,
 				9DD64A2E23760A1D00F159E5 /* HomeTabViewController.swift */,
+				9D2E8F0423C006EB0012AA3E /* TextHomeViewController.swift */,
 				9D2D42552373360A003E21C1 /* EntriesViewController.swift */,
 				9D503BBB237252AE0070F318 /* OverviewViewController.swift */,
 				9DEF34D4236BBEFB003A3A41 /* HomeViewController.swift */,
@@ -426,6 +429,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Purchases/Purchases.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -438,6 +442,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Purchases.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -515,6 +520,7 @@
 				9D328D1823662923003768CF /* AudioViewController.swift in Sources */,
 				9DF6E6EE23AC8B6300DCB973 /* SleepViewController.swift in Sources */,
 				9D0663B12367B3AA00385DEE /* Audio.swift in Sources */,
+				9D2E8F0523C006EB0012AA3E /* TextHomeViewController.swift in Sources */,
 				9D328D1C2366593C003768CF /* TitleCollectionViewCell.swift in Sources */,
 				9D328D16236628E9003768CF /* PaywallViewController.swift in Sources */,
 				9D0663AA2367B22A00385DEE /* Book.swift in Sources */,
@@ -685,7 +691,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FFB7E1A40DB188ABB430764 /* Pods-Cleanse.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-41";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-44";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -698,7 +704,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.CleanseRecipes;
 				PRODUCT_NAME = Vent;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -711,7 +717,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E785B0B06B646A92655E699 /* Pods-Cleanse.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-41";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-44";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -724,7 +730,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.CleanseRecipes;
 				PRODUCT_NAME = Vent;
 				PROVISIONING_PROFILE_SPECIFIER = "";

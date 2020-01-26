@@ -15,7 +15,7 @@ class HomeTabViewController: UITabBarController {
 
         
     //
-    //        self.tabBar.frame = CGRect(origin: CGPoint(x: 0,y :40), size: CGSize(width: view.frame.width, height: 50))
+//            self.tabBar.frame = CGRect(origin: CGPoint(x: 0,y :40), size: CGSize(width: view.frame.width, height: 50))
             
 //            self.tabBar.frame = CGRect(origin: CGPoint(x: 0,y :30), size: CGSize(width: view.frame.width, height: 50))
 //            self.tabBar.layer.borderWidth = 0.0
@@ -23,7 +23,7 @@ class HomeTabViewController: UITabBarController {
 //
 //    //
 //            self.tabBar.backgroundColor = .clear
-//
+////
 //
 //
 //

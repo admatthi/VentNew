@@ -13,10 +13,15 @@ import FirebaseDatabase
 import FirebaseStorage
 import Purchases
 import FBSDKCoreKit
+import IQKeyboardManager
 
 var entereddiscount = String()
 
 var actualdiscount = String()
+
+var monthdate = String()
+
+var dayweek = String()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,7 +44,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         uid = UIDevice.current.identifierForVendor?.uuidString ?? "x"
 
+        let date = Date()
+                          let dateFormatter = DateFormatter()
+                          dateFormatter.dateFormat = "MMM d"
+           var result = dateFormatter.string(from: date)
 
+                          dateformat = result
+           
+           monthdate = dateformat
+           
+           dateFormatter.dateFormat = "yyyy-MM-dd"
+
+           result = dateFormatter.string(from: date)
+           var weekday = (Date().dayOfWeek()!)
+        
+               
+           dayweek = String(weekday)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = tabBarBuyer

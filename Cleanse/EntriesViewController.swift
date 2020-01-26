@@ -33,11 +33,7 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = backi.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        backi.addSubview(blurEffectView)
+
         
         queryforids { () -> Void in
             
@@ -152,12 +148,26 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
             
         cell.titlelabel.text = name
             
-        
+        cell.text1.text = book?.text1
+
         if let date3 = book?.date {
             
             
             cell.datelabel.text = date3
         }
+        
+        cell.contentView.layer.cornerRadius = 5.0
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
+        cell.contentView.layer.masksToBounds = true
+
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 6.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+
         
         //                cell.tapup.tag = indexPath.row
         //
@@ -165,14 +175,7 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         if let imageURLString = book?.imageURL, let imageUrl = URL(string: imageURLString) {
             
-            cell.titleImage.kf.setImage(with: imageUrl)
-            
-            
-            
-            cell.titleImage.layer.cornerRadius = 5.0
-            cell.titleImage.clipsToBounds = true
-            cell.titleImage.alpha = 1
-            
+
             
             
             

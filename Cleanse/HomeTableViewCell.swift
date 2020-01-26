@@ -18,7 +18,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var upvoteslabel: UILabel!
     @IBOutlet weak var titleImage: UIImageView!
     @IBOutlet weak var titlelabel: UILabel!
-
+    @IBOutlet weak var backimage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
