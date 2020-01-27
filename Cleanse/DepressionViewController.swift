@@ -140,255 +140,272 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-          switch collectionView {
-                    // Genre collection
-                    case self.genreCollectionView:
-                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Categories", for: indexPath) as! GenreCollectionViewCell
-
-                        collectionView.alpha = 1
-                        cell.titlelabel.text = genres[indexPath.row]
-                        //            cell.titlelabel.sizeToFit()
-
-                        cell.selectedimage.layer.cornerRadius = 10.0
-                        cell.selectedimage.layer.masksToBounds = true
-                        
-                     
-                        
-
-                        genreCollectionView.alpha = 1
-
-                        if selectedindex == 0 {
-
-                            if indexPath.row == 0 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-                        }
-
-                        if selectedindex == 1 {
-
-                            if indexPath.row == 1 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-
-                        }
-
-                        if selectedindex == 2 {
-
-                            if indexPath.row == 2 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-
-                        }
-
-                        if selectedindex == 3 {
-
-                            if indexPath.row == 3 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-
-                        }
-
-                        if selectedindex == 4 {
-
-                            if indexPath.row == 4 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-                        }
-
-                        if selectedindex == 5 {
-
-                            if indexPath.row == 5 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-
-                        }
-
-                        if selectedindex == 6 {
-
-                            if indexPath.row == 6 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-
-                        }
-
-                        if selectedindex == 7 {
-
-                            if indexPath.row == 7 {
-
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-
-                            } else {
-
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-
-                            }
-
-                        }
-                        
-                        if selectedindex == 8 {
-                            
-                            if indexPath.row == 8 {
-                                
-                                cell.titlelabel.alpha = 1
-                                cell.selectedimage.alpha = 1
-                                
-                            } else {
-                                
-                                cell.titlelabel.alpha = 0.25
-                                cell.selectedimage.alpha = 0
-                                
-                            }
-                            
-                        }
-
-
-                        if selectedindex == 1000 {
-
-                            cell.titlelabel.alpha = 0.25
-                            cell.selectedimage.alpha = 0
-                        }
-
-                        return cell
-
-                    case self.titleCollectionView:
-                        let book = self.book(atIndexPath: indexPath)
-                        titleCollectionView.alpha = 1
-                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! TitleCollectionViewCell
-                        //
-                        //            if book?.bookID == "Title" {
-                        //
-                        //                return cell
-                        //
-                        //            } else {
-
-                        
+        switch collectionView {
+        // Genre collection
+        case self.genreCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Categories", for: indexPath) as! GenreCollectionViewCell
+            
+            collectionView.alpha = 1
+            cell.titlelabel.text = genres[indexPath.row]
+            //            cell.titlelabel.sizeToFit()
+            
+            cell.selectedimage.layer.cornerRadius = 10.0
+            cell.selectedimage.layer.masksToBounds = true
+            
+            
+            
+            
+            genreCollectionView.alpha = 1
+            
+            if selectedindex == 0 {
+                
+                if indexPath.row == 0 {
                     
-                        let name = book?.name
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+            }
+            
+            if selectedindex == 1 {
+                
+                if indexPath.row == 1 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 2 {
+                
+                if indexPath.row == 2 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 3 {
+                
+                if indexPath.row == 3 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 4 {
+                
+                if indexPath.row == 4 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+            }
+            
+            if selectedindex == 5 {
+                
+                if indexPath.row == 5 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 6 {
+                
+                if indexPath.row == 6 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 7 {
+                
+                if indexPath.row == 7 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            if selectedindex == 8 {
+                
+                if indexPath.row == 8 {
+                    
+                    cell.titlelabel.alpha = 1
+                    cell.selectedimage.alpha = 1
+                    
+                } else {
+                    
+                    cell.titlelabel.alpha = 0.25
+                    cell.selectedimage.alpha = 0
+                    
+                }
+                
+            }
+            
+            
+            if selectedindex == 1000 {
+                
+                cell.titlelabel.alpha = 0.25
+                cell.selectedimage.alpha = 0
+            }
+            
+            return cell
+            
+        case self.titleCollectionView:
+            let book = self.book(atIndexPath: indexPath)
+            titleCollectionView.alpha = 1
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! TitleCollectionViewCell
+            //
+            //            if book?.bookID == "Title" {
+            //
+            //                return cell
+            //
+            //            } else {
+            
+            
+            
+            let name = book?.name
+            
+            if (name?.contains(":"))! {
+                
+                var namestring = name?.components(separatedBy: ":")
+                
+                cell.titlelabel.text = namestring![0]
+                
+            } else {
+                
+                cell.titlelabel.text = name
+                
+            }
+            
+            cell.titleImage.layer.shadowColor = UIColor.black.cgColor
+            cell.titleImage.layer.shadowOffset = CGSize(width: 1, height: 1)
+            cell.titleImage.layer.shadowOpacity = 1
+            cell.titleImage.layer.shadowRadius = 1.0
+            cell.titleImage.layer.cornerRadius = 10.0
+            cell.titleImage.clipsToBounds = true
+//            cell.titleback.layer.cornerRadius = 10.0
+                       cell.titleback.clipsToBounds = true
+            
+            cell.layer.cornerRadius = 10.0
+            cell.layer.cornerRadius = 10.0
 
-                        if (name?.contains(":"))! {
+            
+            //                cell.tapup.tag = indexPath.row
+            //
+            //                cell.tapup.addTarget(self, action: #selector(DiscoverViewController.tapWishlist), for: .touchUpInside)
+            
+          
+            if let imageURLString = book?.imageURL, let imageUrl = URL(string: imageURLString) {
+                
+                                            cell.titleImage.kf.setImage(with: imageUrl)
+                
+                
+                cell.titleback.kf.setImage(with: imageUrl)
 
-                            var namestring = name?.components(separatedBy: ":")
-
-                            cell.titlelabel.text = namestring![0]
-
-                        } else {
-
-                            cell.titlelabel.text = name
-
-                        }
-
-        //                cell.tapup.tag = indexPath.row
-        //
-        //                cell.tapup.addTarget(self, action: #selector(DiscoverViewController.tapWishlist), for: .touchUpInside)
-
-                        if let imageURLString = book?.imageURL, let imageUrl = URL(string: imageURLString) {
-
-                            cell.titleImage.kf.setImage(with: imageUrl)
-
-
-
-                            cell.titleImage.layer.cornerRadius = 5.0
-                            cell.titleImage.clipsToBounds = true
-                            cell.titleImage.alpha = 1
-
+                
+                let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+                                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                          blurEffectView.frame = cell.titleback.bounds
+                                    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                           
-                            
-                            
-        //                    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        //                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        //                    blurEffectView.frame = cell.titleback.bounds
-        //                    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //                    cell.titleback.addSubview(blurEffectView)
-
-
-                        }
-
-                        let isWished = Bool()
-
-                        if wishlistids.contains(book!.bookID) {
-
-
-                        } else {
-
-                        }
-
-                        cell.layer.cornerRadius = 5.0
-                        cell.layer.masksToBounds = true
-
-                        cell.titlelabel.alpha = 1
-                        cell.titlelabel.alpha = 1
-
-                        
-                     
-
-                  
-                        return cell
-
-                        //            }
-
-                    default:
-
-                        return UICollectionViewCell()
-                    }
-
+                          cell.titleback.addSubview(blurEffectView)
+                          
+                
+                //                    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+                //                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                //                    blurEffectView.frame = cell.titleback.bounds
+                //                    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                //                    cell.titleback.addSubview(blurEffectView)
+                
+                
+            }
+            
+            let isWished = Bool()
+            
+            if wishlistids.contains(book!.bookID) {
+                
+                
+            } else {
+                
+            }
+            
+            cell.layer.cornerRadius = 5.0
+            cell.layer.masksToBounds = true
+            
+            cell.titlelabel.alpha = 1
+            cell.titlelabel.alpha = 1
+            
+            
+            
+            
+            
+            return cell
+            
+            //            }
+            
+        default:
+            
+            return UICollectionViewCell()
+        }
+        
     }
     
     @IBOutlet weak var depression: UIImageView!
@@ -397,6 +414,12 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var titleCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+                  let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                  blurEffectView.frame = backimage.bounds
+                  blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                  backimage.addSubview(blurEffectView)
         
         genres.removeAll()
         genres.append("Depression")
@@ -463,8 +486,8 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         var screenHeight = screenSize.height
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/2.3, height: screenWidth/1.7)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 2, bottom: 10, right: 2)
+        layout.itemSize = CGSize(width: screenWidth/2.5, height: screenWidth/1.85)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         

@@ -37,6 +37,7 @@
 		9D7360F3236513DE00DC6ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7360F1236513DE00DC6ACB /* LaunchScreen.storyboard */; };
 		9D7360FE236513DE00DC6ACB /* CleanseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7360FD236513DE00DC6ACB /* CleanseTests.swift */; };
 		9D736109236513DE00DC6ACB /* CleanseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D736108236513DE00DC6ACB /* CleanseUITests.swift */; };
+		9DCEB53823DE0FBF00546242 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEB53723DE0FBF00546242 /* FavoritesViewController.swift */; };
 		9DD64A2D2376073000F159E5 /* FreeToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD64A2C2376073000F159E5 /* FreeToPlayViewController.swift */; };
 		9DD64A2F23760A1D00F159E5 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD64A2E23760A1D00F159E5 /* HomeTabViewController.swift */; };
 		9DD9B3FE239B81990061D960 /* DataModel in Resources */ = {isa = PBXBuildFile; fileRef = 9DD9B3FD239B81990061D960 /* DataModel */; };
@@ -105,6 +106,7 @@
 		9D736104236513DE00DC6ACB /* CleanseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D736108236513DE00DC6ACB /* CleanseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanseUITests.swift; sourceTree = "<group>"; };
 		9D73610A236513DE00DC6ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DCEB53723DE0FBF00546242 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		9DD64A2C2376073000F159E5 /* FreeToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeToPlayViewController.swift; sourceTree = "<group>"; };
 		9DD64A2E23760A1D00F159E5 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 		9DD9B3FD239B81990061D960 /* DataModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataModel; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				9D328D112365F5DC003768CF /* DiscoverViewController.swift */,
 				9DF6E6ED23AC8B6300DCB973 /* SleepViewController.swift */,
 				9DF6E6EF23AC8B6E00DCB973 /* DepressionViewController.swift */,
+				9DCEB53723DE0FBF00546242 /* FavoritesViewController.swift */,
 				9DF6E6F123AC8B8200DCB973 /* TraumaViewController.swift */,
 				9DD64A2C2376073000F159E5 /* FreeToPlayViewController.swift */,
 				9DD64A2E23760A1D00F159E5 /* HomeTabViewController.swift */,
@@ -514,6 +517,7 @@
 				9DD9B400239C047A0061D960 /* HomeTableViewCell.swift in Sources */,
 				9D328D122365F5DC003768CF /* DiscoverViewController.swift in Sources */,
 				9D2D42562373360A003E21C1 /* EntriesViewController.swift in Sources */,
+				9DCEB53823DE0FBF00546242 /* FavoritesViewController.swift in Sources */,
 				9DF6E6F023AC8B6E00DCB973 /* DepressionViewController.swift in Sources */,
 				9DEF34D5236BBEFB003A3A41 /* HomeViewController.swift in Sources */,
 				9D0663B22367B3AA00385DEE /* PaywallConfigurationVariant.swift in Sources */,
@@ -691,7 +695,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FFB7E1A40DB188ABB430764 /* Pods-Cleanse.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-44";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-42";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -717,7 +721,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E785B0B06B646A92655E699 /* Pods-Cleanse.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-44";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-42";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

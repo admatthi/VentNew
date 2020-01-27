@@ -9,7 +9,8 @@
 import UIKit
 
 class HomeTabViewController: UITabBarController {
-
+    @IBOutlet weak var mtab: UITabBar!
+    
        override func viewDidLayoutSubviews() {
             
 
@@ -22,17 +23,18 @@ class HomeTabViewController: UITabBarController {
 //            self.tabBar.clipsToBounds = true
 //
 //    //
-//            self.tabBar.backgroundColor = .clear
-////
+ 
 //
 //
 //
-//    //        self.tabBar.layer.borderColor = UIColor.white.cgColor
-//            self.tabBar.itemPositioning = .centered
-//
+    //        self.tabBar.layer.borderColor = UIColor.white.cgColor
+
 //            self.tabBar.layer.borderWidth = 0.0
 //            self.tabBar.layer.borderColor = UIColor.clear.cgColor
-//            self.tabBar.itemSpacing = UIScreen.main.bounds.width/10
+//
+//
+//        self.tabBarController?.tabBar.clipsToBounds = true
+////            self.tabBar.itemSpacing = UIScreen.main.bounds.width/10
 
     //
       
@@ -46,14 +48,23 @@ class HomeTabViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
         
-    tabBar.isTranslucent = true
-        tabBar.backgroundImage = UIImage()
-        tabBar.shadowImage = UIImage() // add this if you want remove tabBar separator
-        tabBar.barTintColor = .clear
-        tabBar.backgroundColor = .black // here is your tabBar color
-        tabBar.layer.backgroundColor = UIColor.clear.cgColor
+        mtab.backgroundColor = UIColor.clear
+              mtab.backgroundImage = UIImage()
+              mtab.shadowImage = UIImage()
+ 
         
+//    tabBar.isTranslucent = true
+//        tabBar.backgroundImage = UIImage()
+//        tabBar.shadowImage = UIImage() // add this if you want remove tabBar separator
+//        tabBar.barTintColor = .clear
+//        tabBar.backgroundColor = .black // here is your tabBar color
+//        tabBar.layer.backgroundColor = UIColor.clear.cgColor
         
+//        self.tabBar.layer.borderWidth = 0.0
+//                self.tabBar.layer.borderColor = UIColor.clear.cgColor
+//
+//
+//            self.tabBar.clipsToBounds = true
 
     }
     

@@ -59,7 +59,7 @@ class TextHomeViewController: UIViewController, UITextViewDelegate {
         func nextcount() {
             
             textView.text = ""
-              textView.textColor = UIColor.black
+              textView.textColor = UIColor.white
             
             if counter > headlines.count-2 {
                 
@@ -146,6 +146,12 @@ class TextHomeViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var dayofweeklabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = backimage.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            backimage.addSubview(blurEffectView)
         
         ref = Database.database().reference()
         
@@ -357,7 +363,7 @@ class TextHomeViewController: UIViewController, UITextViewDelegate {
         
         if textView.text == "•  What was traumatic about today?"{
             textView.text = "•  "
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor.white
         } else {
             
             var allstring = textView.text!
@@ -366,7 +372,7 @@ class TextHomeViewController: UIViewController, UITextViewDelegate {
                 
                 allstring = allstring.replacingOccurrences(of: "•  What else happened today?", with: "•  ")
                 
-                textView.textColor = UIColor.black
+                textView.textColor = UIColor.white
 
                 textView.text = allstring
 
@@ -486,7 +492,7 @@ class TextHomeViewController: UIViewController, UITextViewDelegate {
                 
                 myMutableString = NSMutableAttributedString(string: "\(oldtext)\n\n•  What else happened today?", attributes: [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Medium", size: 19.0)!])
                 
-                myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location:0,length:oldtext.count))
+                myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location:0,length:oldtext.count))
 
                 myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: NSRange(location:oldtext.count,length:30))
 

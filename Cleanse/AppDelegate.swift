@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppEvents.activateApp()
 
         refer = "On Open"
-        
+     
         let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarBuyer : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "HomeTab") as! UITabBarController
         

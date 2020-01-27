@@ -29,11 +29,16 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
               }
     }
     
+    @IBOutlet weak var backimage: UIImageView!
     @IBOutlet weak var backi: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+                  let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                  blurEffectView.frame = backimage.bounds
+                  blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                  backimage.addSubview(blurEffectView)
         
         queryforids { () -> Void in
             
@@ -156,17 +161,14 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
             cell.datelabel.text = date3
         }
         
-        cell.contentView.layer.cornerRadius = 5.0
-        cell.contentView.layer.borderWidth = 1.0
-        cell.contentView.layer.borderColor = UIColor.black.cgColor
-        cell.contentView.layer.masksToBounds = true
+    
+        cell.shadowview.layer.shadowColor = UIColor.black.cgColor
+          cell.shadowview.layer.shadowOffset = CGSize(width: 1, height: 1)
+          cell.shadowview.layer.shadowOpacity = 1
+          cell.shadowview.layer.shadowRadius = 1.0
+        cell.shadowview.layer.cornerRadius = 5.0
+        cell.shadowview.clipsToBounds = false
 
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 6.0
-        cell.layer.shadowOpacity = 1.0
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
 
         
         //                cell.tapup.tag = indexPath.row
