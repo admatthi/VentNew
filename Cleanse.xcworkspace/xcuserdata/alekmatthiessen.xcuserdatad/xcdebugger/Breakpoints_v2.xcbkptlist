@@ -84,12 +84,12 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D65D7AC1-C012-4F7F-8D40-2295A0A79BE6 - dcb47ad7cf430940"
+                  uuid = "D65D7AC1-C012-4F7F-8D40-2295A0A79BE6 - 945017aad9db944f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, __C.RCEntitlement&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Vent.PaywallViewController.tapContinue(Any) -&gt; ()"
-                  moduleName = "Vent"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, __C.RCEntitlement&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in The_Sleep_App.PaywallViewController.tapContinue(Any) -&gt; ()"
+                  moduleName = "The Sleep App"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alekmatthiessen/Downloads/VentNew/Cleanse/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"
@@ -99,12 +99,12 @@
                   offsetFromSymbolStart = "1068">
                </Location>
                <Location
-                  uuid = "D65D7AC1-C012-4F7F-8D40-2295A0A79BE6 - b306509d332b0378"
+                  uuid = "D65D7AC1-C012-4F7F-8D40-2295A0A79BE6 - 68bfbeab309ca4d4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.SKPaymentTransaction&gt;, Swift.Optional&lt;__C.RCPurchaserInfo&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, __C.RCEntitlement&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Vent.PaywallViewController.tapContinue(Any) -&gt; ()"
-                  moduleName = "Vent"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.SKPaymentTransaction&gt;, Swift.Optional&lt;__C.RCPurchaserInfo&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, __C.RCEntitlement&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in The_Sleep_App.PaywallViewController.tapContinue(Any) -&gt; ()"
+                  moduleName = "The Sleep App"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alekmatthiessen/Downloads/VentNew/Cleanse/PaywallViewController.swift"
                   startingColumnNumber = "9223372036854775807"

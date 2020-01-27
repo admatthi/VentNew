@@ -44,17 +44,18 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
             
         }
         
-            var screenSize = collectionView.bounds
-            var screenWidth = screenSize.width
-            var screenHeight = screenSize.height
-
-            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-            layout.sectionInset = UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/2.3, height: screenWidth/1.7)
-            layout.minimumInteritemSpacing = 0
-            layout.minimumLineSpacing = 0
-
-            collectionView!.collectionViewLayout = layout
+              var screenSize = collectionView.bounds
+               var screenWidth = screenSize.width
+               var screenHeight = screenSize.height
+               
+               let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+               layout.sectionInset = UIEdgeInsets(top: 10, left: 2, bottom: 10, right: 2)
+               layout.itemSize = CGSize(width: screenWidth/2.5, height: screenWidth/1.85)
+               layout.minimumInteritemSpacing = 0
+               layout.minimumLineSpacing = 0
+               
+               collectionView!.collectionViewLayout = layout
+               
         
         // Do any additional setup after loading the view.
     }
@@ -167,7 +168,6 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
           cell.shadowview.layer.shadowOpacity = 1
           cell.shadowview.layer.shadowRadius = 1.0
         cell.shadowview.layer.cornerRadius = 5.0
-        cell.shadowview.clipsToBounds = false
 
 
         
@@ -178,8 +178,19 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         if let imageURLString = book?.imageURL, let imageUrl = URL(string: imageURLString) {
             
 
+            cell.shadowview.kf.setImage(with: imageUrl)
             
+            cell.titleback.kf.setImage(with: imageUrl)
+
             
+            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+                                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                      blurEffectView.frame = cell.titleback.bounds
+                                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                      
+                      cell.titleback.addSubview(blurEffectView)
+
+
             
             //                    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
             //                    let blurEffectView = UIVisualEffectView(effect: blurEffect)

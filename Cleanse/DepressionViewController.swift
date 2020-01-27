@@ -50,7 +50,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
 
                 genreCollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
 
-                collectionView.alpha = 0
+//                collectionView.alpha = 0
 
                 selectedgenre = genres[indexPath.row]
 
@@ -145,7 +145,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         case self.genreCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Categories", for: indexPath) as! GenreCollectionViewCell
             
-            collectionView.alpha = 1
+//            collectionView.alpha = 1
             cell.titlelabel.text = genres[indexPath.row]
             //            cell.titlelabel.sizeToFit()
             
@@ -155,7 +155,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             
             
             
-            genreCollectionView.alpha = 1
+//            genreCollectionView.alpha = 1
             
             if selectedindex == 0 {
                 
@@ -310,7 +310,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             
         case self.titleCollectionView:
             let book = self.book(atIndexPath: indexPath)
-            titleCollectionView.alpha = 1
+//            titleCollectionView.alpha = 1
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! TitleCollectionViewCell
             //
             //            if book?.bookID == "Title" {
@@ -422,22 +422,22 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                   backimage.addSubview(blurEffectView)
         
         genres.removeAll()
-        genres.append("Depression")
+//        genres.append("Depression")
         genres.append("Sleep")
         
-        genres.append("Insecurity")
-        genres.append("Panic")
-        genres.append("Anxiety")
-        genres.append("Nervous")
-        genres.append("Grieving")
-        genres.append("Addiction")
-        genres.append("Anger")
+//        genres.append("Insecurity")
+//        genres.append("Panic")
+//        genres.append("Anxiety")
+//        genres.append("Nervous")
+//        genres.append("Grieving")
+//        genres.append("Addiction")
+//        genres.append("Anger")
         
         ref = Database.database().reference()
         
         queryforinfo()
         
-        selectedgenre = "Depression"
+        selectedgenre = "Sleep"
         
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -452,19 +452,19 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         if selectedgenre == "" || selectedgenre == "None" {
             
-            selectedgenre = "Money"
-            
-            selectedindex = genres.firstIndex(of: selectedgenre)!
-            
-            genreCollectionView.reloadData()
+//            selectedgenre = "Money"
+//
+//            selectedindex = genres.firstIndex(of: selectedgenre)!
+//
+//            genreCollectionView.reloadData()
             
         } else {
             
-            print(selectedindex)
-            
-            selectedindex = genres.firstIndex(of: selectedgenre)!
-            
-            genreCollectionView.reloadData()
+//            print(selectedindex)
+//
+            selectedindex = 0
+//
+//            genreCollectionView.reloadData()
             
         }
         
@@ -503,7 +503,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         func queryforids(completed: @escaping (() -> Void) ) {
 
-                   titleCollectionView.alpha = 0
+//                   titleCollectionView.alpha = 0
 
                    var functioncounter = 0
 
