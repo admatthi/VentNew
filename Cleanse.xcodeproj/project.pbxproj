@@ -94,7 +94,7 @@
 		9D328D1D23665959003768CF /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D328D2123668B57003768CF /* DataModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataModel; sourceTree = "<group>"; };
 		9D503BBB237252AE0070F318 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
-		9D7360E3236513DC00DC6ACB /* Vent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7360E3236513DC00DC6ACB /* Sleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7360E6236513DC00DC6ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7360EC236513DE00DC6ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D7360EF236513DE00DC6ACB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		9D7360E4236513DC00DC6ACB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D7360E3236513DC00DC6ACB /* Vent.app */,
+				9D7360E3236513DC00DC6ACB /* Sleep.app */,
 				9D7360F9236513DE00DC6ACB /* CleanseTests.xctest */,
 				9D736104236513DE00DC6ACB /* CleanseUITests.xctest */,
 			);
@@ -279,7 +279,7 @@
 			);
 			name = Cleanse;
 			productName = Cleanse;
-			productReference = 9D7360E3236513DC00DC6ACB /* Vent.app */;
+			productReference = 9D7360E3236513DC00DC6ACB /* Sleep.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9D7360F8236513DE00DC6ACB /* CleanseTests */ = {
@@ -710,7 +710,7 @@
 				);
 				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.CleanseRecipes;
-				PRODUCT_NAME = Vent;
+				PRODUCT_NAME = Sleep;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -736,7 +736,7 @@
 				);
 				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.CleanseRecipes;
-				PRODUCT_NAME = Vent;
+				PRODUCT_NAME = Sleep;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
