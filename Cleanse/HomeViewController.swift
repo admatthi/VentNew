@@ -183,9 +183,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         refer = "On Tap Daily"
-        
-        if didpurchase {
-        
+                
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
@@ -255,11 +253,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.performSegue(withIdentifier: "DailyToRead", sender: self)
             
-        } else {
-            
-            self.performSegue(withIdentifier: "HomeToSales", sender: self)
-
-        }
+   
             
             
     }

@@ -212,9 +212,9 @@ class EntriesViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         cell.layer.cornerRadius = 5.0
         cell.layer.masksToBounds = true
-        
-        cell.titlelabel.alpha = 1
-        cell.titlelabel.alpha = 1
+//        
+//        cell.titlelabel.alpha = 1
+//        cell.titlelabel.alpha = 1
         
         
         
