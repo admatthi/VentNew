@@ -27,7 +27,6 @@ var dayweek = String()
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var purchases: Purchases?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -74,13 +73,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               
           } else {
               
-              tabBarBuyer.selectedIndex = 1
+              tabBarBuyer.selectedIndex = 0
               
               UserDefaults.standard.set(true, forKey: "launchedBefore")
               
           }
         
         queryforpaywall()
+        
+
+        Purchases.debugLogsEnabled = true
+        Purchases.configure(withAPIKey: "YuMbZXigVRCOrvLStdviFvUqYzgKMTFN", appUserID: nil)
+        
+    
+        
+        
         return true
     }
     
@@ -117,57 +124,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     // MARK: UISceneSession Lifecycle
-    weak var purchasesdelegate: SnippetsPurchasesDelegate?
-
 
 
 
 }
 
-protocol SnippetsPurchasesDelegate: AnyObject {
 
-    func purchaseCompleted(product: String)
-
-}
-
-extension AppDelegate: PurchasesDelegate {
-    func purchases(_ purchases: Purchases, completedTransaction transaction: SKPaymentTransaction, withUpdatedInfo purchaserInfo: PurchaserInfo) {
-
-        self.purchasesdelegate?.purchaseCompleted(product: transaction.payment.productIdentifier)
-
-    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-        
-        didpurchase = true
- 
-
-    }
-
-    func purchases(_ purchases: Purchases, receivedUpdatedPurchaserInfo purchaserInfo: PurchaserInfo) {
-        print(purchaserInfo)
-
-    }
-
-    func purchases(_ purchases: Purchases, failedToUpdatePurchaserInfoWithError error: Error) {
-        print(error)
-
-    }
-
-    func purchases(_ purchases: Purchases, failedTransaction transaction: SKPaymentTransaction, withReason failureReason: Error) {
-        print(failureReason)
-
-    }
-
-    func purchases(_ purchases: Purchases, restoredTransactionsWith purchaserInfo: PurchaserInfo) {
-        
-        ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-        
-        didpurchase = true
-    }
-
-    func purchases(_ purchases: Purchases, failedToRestoreTransactionsWithError error: Error) {
-        print(error)
-    }
-}
 
 
 

@@ -86,7 +86,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                 selectedprofession = book?.profession ?? ""
                 selectedauthorimage = book?.authorImage ?? ""
                 selectedbackground = book?.imageURL ?? ""
-
+                selectedurl = book?.headline1 ?? ""
                     
                 headlines.append(book?.headline1 ?? "x")
                 headlines.append(book?.headline2 ?? "x")
@@ -137,6 +137,55 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
 
 
         }
+    
+    func configurationTextField(textField: UITextField!){
+            textField?.placeholder = "Promo Code"
+            
+            
+            
+            
+        }
+     
+    
+    @IBAction func tapDiscount(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Please enter your discount code", message: "", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: configurationTextField)
+
+                  alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { action in
+                      switch action.style{
+                      case .default:
+                          print("default")
+                        
+                        let textField = alert.textFields![0] // Force unwrapping because we know it exists.
+                        
+                        if textField.text != "" {
+                            
+                            if actualdiscount == textField.text! {
+                                
+                                didpurchase = true
+                                
+                                ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+                                
+                            }
+                            
+                        }
+                          
+                          
+                      case .cancel:
+                          print("cancel")
+                          
+                      case .destructive:
+                          print("destructive")
+                          
+                          
+                      }}))
+        
+        self.present(alert, animated: true, completion: nil)
+
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -408,6 +457,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         
     }
     
+    @IBOutlet weak var topdesign: UIImageView!
     @IBOutlet weak var depression: UIImageView!
     var selectedindex = Int()
     @IBOutlet weak var genreCollectionView: UICollectionView!
@@ -421,11 +471,23 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                   blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
                   backimage.addSubview(blurEffectView)
         
+  
+        let blurEffect2 = UIBlurEffect(style: UIBlurEffect.Style.dark)
+                      let blurEffectView2 = UIVisualEffectView(effect: blurEffect)
+        
+        
+                  blurEffectView2.frame = topdesign.bounds
+                  blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                  topdesign.addSubview(blurEffectView2)
+        
         genres.removeAll()
 //        genres.append("Depression")
-        genres.append("Sleep")
-        
-//        genres.append("Insecurity")
+        genres.append("All")
+        genres.append("Recommended")
+        genres.append("Fiction")
+        genres.append("Kids")
+        genres.append("Non Fiction")
+        genres.append("Naps")
 //        genres.append("Panic")
 //        genres.append("Anxiety")
 //        genres.append("Nervous")
@@ -437,7 +499,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         queryforinfo()
         
-        selectedgenre = "Sleep"
+        selectedgenre = "All"
         
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -460,11 +522,11 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             
         } else {
             
-//            print(selectedindex)
+            print(selectedindex)
 //
             selectedindex = 0
 //
-//            genreCollectionView.reloadData()
+            genreCollectionView.reloadData()
             
         }
         

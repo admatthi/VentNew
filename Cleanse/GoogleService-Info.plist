@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>609445419221-c868gqv0v3tr1bintablhoaj11hagbvb.apps.googleusercontent.com</string>
+	<string>609445419221-hdnkk22a8nea3k73n2v4o980tl97acji.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.609445419221-c868gqv0v3tr1bintablhoaj11hagbvb</string>
+	<string>com.googleusercontent.apps.609445419221-hdnkk22a8nea3k73n2v4o980tl97acji</string>
 	<key>API_KEY</key>
 	<string>AIzaSyB84DAhKNNVMJ1mMku4tu1-aTdvLUvXenE</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.aatech.CleanseRecipes</string>
+	<string>com.aatech.SleepStories</string>
 	<key>PROJECT_ID</key>
 	<string>cleanse-recipes</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:609445419221:ios:11df0e755485977de1ea5c</string>
+	<string>1:609445419221:ios:21b234b7d20b4afde1ea5c</string>
 	<key>DATABASE_URL</key>
 	<string>https://cleanse-recipes.firebaseio.com</string>
 </dict>

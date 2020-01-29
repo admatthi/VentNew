@@ -12,12 +12,21 @@ import Purchases
 import FBSDKCoreKit
 var refer = String()
 
+
+@objc protocol SwiftPaywallDelegate {
+    func purchaseCompleted(paywall: PaywallViewController, transaction: SKPaymentTransaction, purchaserInfo: Purchases.PurchaserInfo)
+    @objc optional func purchaseFailed(paywall: PaywallViewController, purchaserInfo: Purchases.PurchaserInfo?, error: Error, userCancelled: Bool)
+    @objc optional func purchaseRestored(paywall: PaywallViewController, purchaserInfo: Purchases.PurchaserInfo?, error: Error?)
+}
+
 class PaywallViewController: UIViewController {
+    
+    
+    var delegate : SwiftPaywallDelegate?
     
     @IBOutlet weak var termstext: UILabel!
     @IBOutlet weak var disclaimertext: UIButton!
     @IBOutlet weak var leadingtext: UILabel!
-    var purchases = Purchases.configure(withAPIKey: "paCLaBYrGELMfdxuMQqbROxMfgDbcGGn", appUserID: nil)
     
     
     @IBAction func tapRestore(_ sender: Any) {
@@ -29,43 +38,71 @@ class PaywallViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var backimage: UIImageView!
+    
+    
+    
     @IBAction func tapContinue(_ sender: Any) {
         
         logTapSubscribeEvent(referrer : refer)
         
-        purchases.entitlements { (entitlements, error) in
-            guard let pro = entitlements?["subscriptions"] else { return }
-            guard let monthly = pro.offerings["Yearly"] else { return }
-            guard let product = monthly.activeProduct else { return }
+        guard let package = offering?.availablePackages[0] else {
+            print("No available package")
+            return
+        }
+        
+        Purchases.shared.purchasePackage(package) { (trans, info, error, cancelled) in
             
-            self.purchases.makePurchase(product, { (transaction, purchaserInfo, error) in
-                if let purchaserInfo = purchaserInfo {
-                    
-                    if purchaserInfo.activeEntitlements.contains("my_entitlement_identifier") {
-                        // Unlock that great "pro" content
-                        
-                        self.logPurchaseSuccessEvent(referrer : refer)
-                    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-                        
-                        didpurchase = true
-                        
-                        self.dismiss(animated: true, completion: nil)
-                    } else {
-                        
-                        self.logPurchaseSuccessEvent(referrer : refer)
-                        
-                        ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
-                        
-                        didpurchase = true
-                        self.dismiss(animated: true, completion: nil)
-                        
+            if let error = error {
+                if let purchaseFailedHandler = self.delegate?.purchaseFailed {
+                    purchaseFailedHandler(self, info, error, cancelled)
+                } else {
+                    if !cancelled {
                         
                     }
+                }
+            } else  {
+                if let purchaseCompletedHandler = self.delegate?.purchaseCompleted {
+                    purchaseCompletedHandler(self, trans!, info!)
+                    
+                    self.logPurchaseSuccessEvent(referrer : refer)
+                    //
+                    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+                    
+                    didpurchase = true
+                    self.dismiss(animated: true, completion: nil)
+                    
+                } else {
+                    
+                    self.logPurchaseSuccessEvent(referrer : refer)
+                    //
+                    ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+                    
+                    didpurchase = true
+                    self.dismiss(animated: true, completion: nil)
                     
                 }
-            })
-            
+            }
         }
+        
+        
+        //
+        //        purchases.shared.purchasePackage(package) { (transaction, purchaserInfo, error, userCancelled) in
+        //            if purchaserInfo?.entitlements.all["subscriptions"]?.isActive == true {
+        //
+        //                self.logPurchaseSuccessEvent(referrer : refer)
+        //
+        //                                 ref?.child("Users").child(uid).updateChildValues(["Purchased" : "True"])
+        //
+        //                                 didpurchase = true
+        //                                 self.dismiss(animated: true, completion: nil)
+        //
+        //                // Unlock that great "pro" content
+        //            }
+        //        }
+        //
+        
+        
+        
     }
     
     @IBAction func tapTerms(_ sender: Any) {
@@ -77,6 +114,9 @@ class PaywallViewController: UIViewController {
         
     }
     
+    private var offering : Purchases.Offering?
+    
+    private var offeringId : String?
     
     @IBOutlet weak var tapcontinue: UIButton!
     override func viewDidLoad() {
@@ -98,40 +138,53 @@ class PaywallViewController: UIViewController {
         
         queryforpaywall()
         
- 
-        // Do any additional setup after loading the view.
+        Purchases.shared.offerings { (offerings, error) in
+            
+            if error != nil {
+            }
+            if let offeringId = self.offeringId {
+                
+                self.offering = offerings?.offering(identifier: offeringId)
+            } else {
+                self.offering = offerings?.current
+            }
+            
+        }
+        
     }
     
+    
+    
     func queryforpaywall() {
-                
+        
         ref?.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
             
-     
+            
             
             if let slimey = value?["Slimey"] as? String {
-
+                
                 slimeybool = true
                 
                 self.termstext.alpha = 0
-                         self.leadingtext.alpha = 0
-                        self.disclaimertext.alpha = 0
-                         self.tapcontinue.setTitle("Try for Free", for: .normal)
+                self.leadingtext.alpha = 0
+                self.disclaimertext.alpha = 0
+                self.tapcontinue.setTitle("Try for Free", for: .normal)
                 
             } else {
                 
                 slimeybool = false
                 self.termstext.alpha = 1
-                  self.leadingtext.alpha = 1
-                  self.disclaimertext.alpha = 1
-                  self.tapcontinue.setTitle("Continue", for: .normal)
-
+                self.leadingtext.alpha = 1
+                self.disclaimertext.alpha = 1
+                self.tapcontinue.setTitle("Continue", for: .normal)
+                
             }
             
             if let discountcode = value?["DiscountCode"] as? String {
                 
-               actualdiscount = discountcode
+                actualdiscount = discountcode
                 
             } else {
                 

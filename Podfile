@@ -9,7 +9,7 @@ pod 'Firebase/Analytics'
 pod 'Kingfisher'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
-pod 'Purchases', '2.0.0'
+pod 'Purchases'
 pod 'FBSDKCoreKit'
 pod 'IQKeyboardManager'
 

@@ -23,7 +23,7 @@ class OverviewViewController: UIViewController {
             randomString = NSUUID().uuidString
 
             
-            self.performSegue(withIdentifier: "OverviewToRead", sender: self)
+            self.performSegue(withIdentifier: "OverviewToListen", sender: self)
         } else {
             
             self.performSegue(withIdentifier: "OverviewToSale", sender: self)
