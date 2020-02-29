@@ -25,16 +25,16 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb2595229670571054</string>
+				<string>fb2676895095699781</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>2595229670571054</string>
+	<string>2676895095699781</string>
 	<key>FacebookDisplayName</key>
-	<string>Chill</string>
+	<string>Sleep Stories</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

@@ -484,10 +484,13 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
 //        genres.append("Depression")
         genres.append("All")
         genres.append("Recommended")
-        genres.append("Fiction")
-        genres.append("Kids")
-        genres.append("Non Fiction")
-        genres.append("Naps")
+        genres.append("Love")
+        genres.append("Depression")
+        genres.append("Confidence")
+        genres.append("Gratitude")
+        genres.append("Sleep")
+        genres.append("Purpose")
+
 //        genres.append("Panic")
 //        genres.append("Anxiety")
 //        genres.append("Nervous")
@@ -560,7 +563,38 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             
         }
         
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func queryforinfo() {
+                
+        ref?.child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            if let purchased = value?["Purchased"] as? String {
+                
+                if purchased == "True" {
+                    
+                    didpurchase = true
+                    
+                } else {
+                                 
+                    didpurchase = false
+                    self.performSegue(withIdentifier: "HomeToSale2", sender: self)
+                    
+                }
+                
+            } else {
+                
+            didpurchase = false
+              self.performSegue(withIdentifier: "HomeToSale2", sender: self)
+            }
+     
+        })
+        
     }
         
         func queryforids(completed: @escaping (() -> Void) ) {
@@ -610,32 +644,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                    })
                }
         
-        func queryforinfo() {
-                    
-            ref?.child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                let value = snapshot.value as? NSDictionary
-                
-                if let purchased = value?["Purchased"] as? String {
-                    
-                    if purchased == "True" {
-                        
-                        didpurchase = true
-                        
-                    } else {
-                                     
-                        didpurchase = false
-                        
-                    }
-                    
-                } else {
-                    
-                    didpurchase = false
-                }
-         
-            })
-            
-        }
+        
 
     /*
     // MARK: - Navigation

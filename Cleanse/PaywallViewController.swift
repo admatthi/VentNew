@@ -33,6 +33,7 @@ class PaywallViewController: UIViewController {
         
         
     }
+    
     @IBAction func tapBack(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
