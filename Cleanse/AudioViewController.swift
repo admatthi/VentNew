@@ -412,6 +412,7 @@ class AudioViewController: UIViewController {
         
         player?.play()
         
+        
         let playerLayer=AVPlayerLayer(player: player!)
         
         playerLayer.frame=CGRect(x: 0, y: 0, width: 10, height: 50)
@@ -513,10 +514,8 @@ class AudioViewController: UIViewController {
         print(audiofiles)
         
         
-        headlinelabel.text = selectedtitle
-        
-        headlines[0] = selectedurl
-        
+        headlinelabel.text = selectedheadline
+                
         var audioSession = AVAudioSession.sharedInstance()
         
         do {

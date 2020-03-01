@@ -218,4 +218,5 @@ class PaywallViewController: UIViewController {
         AppEvents.logEvent(AppEvents.Name(rawValue: "purchase success"), parameters: ["referrer" : referrer])
     }
     
+   
 }

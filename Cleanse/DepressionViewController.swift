@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseCore
 import FirebaseDatabase
+import FBSDKCoreKit
 
 class DepressionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
@@ -70,7 +71,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
 
                 let book = self.book(atIndexPath: indexPath)
                 
-                
+               
                 headlines.removeAll()
                 
                 bookindex = indexPath.row
@@ -86,8 +87,10 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                 selectedprofession = book?.profession ?? ""
                 selectedauthorimage = book?.authorImage ?? ""
                 selectedbackground = book?.imageURL ?? ""
-                selectedurl = book?.headline1 ?? ""
                     
+                refer = selectedbookid
+                logAffirmationClicked(referrer: refer)
+                
                 headlines.append(book?.headline1 ?? "x")
                 headlines.append(book?.headline2 ?? "x")
                 headlines.append(book?.headline3 ?? "x")
@@ -137,6 +140,11 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
 
 
         }
+    
+    func logAffirmationClicked(referrer : String) {
+             AppEvents.logEvent(AppEvents.Name(rawValue: "affirmation listened"), parameters: ["referrer" : referrer])
+         }
+       
     
     func configurationTextField(textField: UITextField!){
             textField?.placeholder = "Promo Code"
@@ -490,6 +498,8 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         genres.append("Gratitude")
         genres.append("Sleep")
         genres.append("Purpose")
+        
+        refer = "Discover"
 
 //        genres.append("Panic")
 //        genres.append("Anxiety")

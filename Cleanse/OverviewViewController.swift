@@ -18,6 +18,8 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var tapstart: UIButton!
     @IBAction func tapStart(_ sender: Any) {
         
+        refer = "Book ID \(selectedbookid)"
+        
         if didpurchase {
             
             randomString = NSUUID().uuidString
@@ -44,7 +46,7 @@ class OverviewViewController: UIViewController {
         tapstart.clipsToBounds = true
 
         
-        
+        refer = "Overview"
         authorimage.layer.cornerRadius = authorimage.frame.size.width / 2
         authorimage.clipsToBounds = true
         
@@ -59,7 +61,7 @@ class OverviewViewController: UIViewController {
           
         imageUrl = URL(string: imageURLString)
           
-          blurredimage.kf.setImage(with: imageUrl)
+        blurredimage.kf.setImage(with: imageUrl)
         
         backimagel.kf.setImage(with: imageUrl)
 

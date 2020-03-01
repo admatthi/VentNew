@@ -66,7 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                titleTableView.reloadData()
             
-    
+                refer = "Home"
             
                   let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH"
