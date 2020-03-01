@@ -76,9 +76,13 @@ class AudioViewController: UIViewController {
         previouscount()
         
     }
+    var pressedpaused = Bool()
+    
     @IBAction func tapPlayOrPause(_ sender: Any) {
         
-        if player?.rate == 0 {
+        timer.invalidate()
+
+        if pressedpaused {
             
             updater = CADisplayLink(target: self, selector: #selector(AudioViewController.trackAudio))
             updater?.frameInterval = 1
@@ -88,13 +92,17 @@ class AudioViewController: UIViewController {
             
             tapplayorpause.setBackgroundImage(UIImage(named: "Pause"), for: .normal)
             
-            
+            pressedpaused = false
+
         } else {
             
+
             player?.pause()
             tapplayorpause.setBackgroundImage(UIImage(named: "Play"), for: .normal)
             
             updater?.invalidate()
+            pressedpaused = true
+
             
         }
     }
@@ -296,15 +304,14 @@ class AudioViewController: UIViewController {
         
         tapspeed.setTitle("1x", for: .normal)
         
-        player?.rate = 1.0
         x2speed = false
         
         
         
         if counter > audiofiles.count-2 {
             
-            let generator = UIImpactFeedbackGenerator(style: .heavy)
-            generator.impactOccurred()
+//            let generator = UIImpactFeedbackGenerator(style: .heavy)
+//            generator.impactOccurred()
             
             
             
@@ -362,19 +369,32 @@ class AudioViewController: UIViewController {
     
     var url = URL(string: "www.google.com")
     
+    @objc func update() {
+        // Something cool
+        
+        player?.seek(to: CMTime.zero)
+        
+        player?.play()
+    }
+    
     @objc func playerDidFinishPlaying() {
         
         if counter > audiofiles.count-2 {
             
-            let generator = UIImpactFeedbackGenerator(style: .heavy)
-            generator.impactOccurred()
+//            let generator = UIImpactFeedbackGenerator(style: .heavy)
+//            generator.impactOccurred()
+            
+            timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.update), userInfo: nil, repeats: false)
+
             
             
-            player?.pause()
+
+            
+//            player?.pause()
             
             
             
-            self.performSegue(withIdentifier: "AudioToCompleted", sender: self)
+//            self.performSegue(withIdentifier: "AudioToCompleted", sender: self)
             
         } else {
             
@@ -409,9 +429,10 @@ class AudioViewController: UIViewController {
         player!.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil)
         
         player?.automaticallyWaitsToMinimizeStalling = false
-        
+     
+
         player?.play()
-        
+
         
         let playerLayer=AVPlayerLayer(player: player!)
         
@@ -436,6 +457,8 @@ class AudioViewController: UIViewController {
             print(doublect)
             
             print(duration)
+            
+            duration = 300
             
             if doublect >= 1 {
                 
@@ -463,8 +486,10 @@ class AudioViewController: UIViewController {
     @IBOutlet var tapback: UIButton!
     override func viewDidAppear(_ animated: Bool) {
         
+        
   
         if player?.rate == 0 {
+            
             
             tapplayorpause.setBackgroundImage(UIImage(named: "Play"), for: .normal)
             
@@ -474,6 +499,8 @@ class AudioViewController: UIViewController {
             
         }
     }
+    
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -489,6 +516,8 @@ class AudioViewController: UIViewController {
         
         headlinelabel.text = selectedtitle
         
+        pressedpaused = false
+
         
         
         backimage.kf.setImage(with: imageUrl)
@@ -537,7 +566,10 @@ class AudioViewController: UIViewController {
             
         } else {
             
-            durationlabel.text = durationcmttime.durationText
+//            durationlabel.text = durationcmttime.durationText
+            
+            durationlabel.text = "5:00"
+
             
             updater = CADisplayLink(target: self, selector: #selector(AudioViewController.trackAudio))
             updater?.frameInterval = 1
@@ -591,6 +623,9 @@ class AudioViewController: UIViewController {
                 //
                 
                 durationlabel.text = durationcmttime.durationText
+                
+                durationlabel.text = "5:00"
+
                 
                 //                let dTotalSeconds = player?.currentTime()
                 //
