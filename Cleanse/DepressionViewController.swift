@@ -71,6 +71,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
 
                 let book = self.book(atIndexPath: indexPath)
                 
+
                
                 headlines.removeAll()
                 
@@ -79,7 +80,6 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                 selectedtitle = book?.name ?? ""
                 selectedurl = book?.audioURL ?? ""
                 selectedbookid = book?.bookID ?? ""
-                selectedgenre = book?.genre ?? ""
                 selectedamazonurl = book?.amazonURL ?? ""
                 selecteddescription = book?.description ?? ""
                 selectedduration = book?.duration ?? 15
@@ -133,7 +133,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
                          }}))
                 
                 
-                    self.performSegue(withIdentifier: "DepressionToRead", sender: self)
+                    self.performSegue(withIdentifier: "DiscoverToTexts", sender: self)
 
              
             }
@@ -202,7 +202,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         case self.genreCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Categories", for: indexPath) as! GenreCollectionViewCell
             
-//            collectionView.alpha = 1
+            //            collectionView.alpha = 1
             cell.titlelabel.text = genres[indexPath.row]
             //            cell.titlelabel.sizeToFit()
             
@@ -212,7 +212,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             
             
             
-//            genreCollectionView.alpha = 1
+            //            genreCollectionView.alpha = 1
             
             if selectedindex == 0 {
                 
@@ -367,7 +367,7 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             
         case self.titleCollectionView:
             let book = self.book(atIndexPath: indexPath)
-//            titleCollectionView.alpha = 1
+            //            titleCollectionView.alpha = 1
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! TitleCollectionViewCell
             //
             //            if book?.bookID == "Title" {
@@ -398,33 +398,52 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
             cell.titleImage.layer.shadowRadius = 1.0
             cell.titleImage.layer.cornerRadius = 10.0
             cell.titleImage.clipsToBounds = true
-//            cell.titleback.layer.cornerRadius = 10.0
-                       cell.titleback.clipsToBounds = true
+            //            cell.titleback.layer.cornerRadius = 10.0
+            cell.titleback.clipsToBounds = true
             
             cell.layer.cornerRadius = 10.0
             cell.layer.cornerRadius = 10.0
-
+            
+            if let viewsnum2 = book?.views {
+                
+                cell.viewsnum.text = "\(book!.views!)M views"
+                
+            } else {
+                
+                cell.viewsnum.text = "6M views"
+                
+            }
+            
+            if let viewsnum3 = book?.textnum {
+                        
+                        cell.textnumbers.text = "\(book!.textnum!) texts"
+                        
+                    } else {
+                        
+                        cell.textnumbers.text = "16 texts"
+                        
+                    }
             
             //                cell.tapup.tag = indexPath.row
             //
             //                cell.tapup.addTarget(self, action: #selector(DiscoverViewController.tapWishlist), for: .touchUpInside)
             
-          
+            
             if let imageURLString = book?.imageURL, let imageUrl = URL(string: imageURLString) {
                 
-                                            cell.titleImage.kf.setImage(with: imageUrl)
+                cell.titleImage.kf.setImage(with: imageUrl)
                 
                 
                 cell.titleback.kf.setImage(with: imageUrl)
-
+                
                 
                 let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-                                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                          blurEffectView.frame = cell.titleback.bounds
-                                    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                          
-                          cell.titleback.addSubview(blurEffectView)
-                          
+                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                blurEffectView.frame = cell.titleback.bounds
+                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                
+                cell.titleback.addSubview(blurEffectView)
+                
                 
                 //                    let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
                 //                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -473,31 +492,34 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-                  let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                  blurEffectView.frame = backimage.bounds
-                  blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                  backimage.addSubview(blurEffectView)
-        
-  
-        let blurEffect2 = UIBlurEffect(style: UIBlurEffect.Style.dark)
-                      let blurEffectView2 = UIVisualEffectView(effect: blurEffect)
-        
-        
-                  blurEffectView2.frame = topdesign.bounds
-                  blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                  topdesign.addSubview(blurEffectView2)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+//                  let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//                  blurEffectView.frame = backimage.bounds
+//                  blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//                  backimage.addSubview(blurEffectView)
+//
+//
+//        let blurEffect2 = UIBlurEffect(style: UIBlurEffect.Style.dark)
+//                      let blurEffectView2 = UIVisualEffectView(effect: blurEffect)
+//
+//
+//                  blurEffectView2.frame = topdesign.bounds
+//                  blurEffectView2.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//                  topdesign.addSubview(blurEffectView2)
         
         genres.removeAll()
 //        genres.append("Depression")
         genres.append("All")
-        genres.append("Recommended")
-        genres.append("Love")
-        genres.append("Depression")
-        genres.append("Confidence")
-        genres.append("Gratitude")
-        genres.append("Sleep")
-        genres.append("Purpose")
+        genres.append("Openers")
+        genres.append("Compliments")
+        genres.append("Rejections")
+        genres.append("Ask Them Out")
+        genres.append("Booty Call")
+        genres.append("Break Ups")
+
+//        genres.append("Addiction")
+//        genres.append("Stress")
+//        genres.append("Self-Care")
         
         refer = "Discover"
 
@@ -561,8 +583,8 @@ class DepressionViewController: UIViewController, UICollectionViewDelegate, UICo
         var screenHeight = screenSize.height
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 2, bottom: 10, right: 2)
-        layout.itemSize = CGSize(width: screenWidth/2.5, height: screenWidth/1.85)
+        layout.sectionInset = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/2.3, height: screenWidth/1.4)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         

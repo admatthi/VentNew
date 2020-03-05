@@ -108,7 +108,7 @@ class PaywallViewController: UIViewController {
     
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://getchillapp.weebly.com/privacy"
+        if let url = NSURL(string: "https://www.aktechnology.info/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

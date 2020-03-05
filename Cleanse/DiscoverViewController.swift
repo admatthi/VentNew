@@ -241,7 +241,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDelegate, UIColl
 
             ref = Database.database().reference()
 
-            queryforinfo()
+        queryforinfo()
             
         genres.removeAll()
 //        genres.append("Work")

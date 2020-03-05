@@ -38,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         refer = "On Open"
      
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarBuyer : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "HomeTab") as! UITabBarController
-        
+//        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabBarBuyer : UITabBarController = mainStoryboardIpad.instantiateViewController(withIdentifier: "HomeTab") as! UITabBarController
+//
         uid = UIDevice.current.identifierForVendor?.uuidString ?? "x"
 
         let date = Date()
@@ -59,25 +59,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
                
            dayweek = String(weekday)
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = tabBarBuyer
-        
-        self.window?.makeKeyAndVisible()
-        
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-          
-          if launchedBefore {
-              
-              tabBarBuyer.selectedIndex = 0
-              
-          } else {
-              
-              tabBarBuyer.selectedIndex = 0
-              
-              UserDefaults.standard.set(true, forKey: "launchedBefore")
-              
-          }
+//
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = tabBarBuyer
+//
+//        self.window?.makeKeyAndVisible()
+//
+//        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+//          
+//          if launchedBefore {
+//              
+//              tabBarBuyer.selectedIndex = 0
+//              
+//          } else {
+//              
+//              tabBarBuyer.selectedIndex = 0
+//              
+//              UserDefaults.standard.set(true, forKey: "launchedBefore")
+//              
+//          }
         
         queryforpaywall()
         
